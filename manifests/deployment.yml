@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jsapp1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jsapp1
+  template:
+    metadata:
+      labels:
+        app: jsapp1 
+    spec:
+      containers:
+        - name: jsapp1 
+          image: yole0devops0c1.azurecr.io/jsapp1
+          ports:
+          - containerPort: 8080
